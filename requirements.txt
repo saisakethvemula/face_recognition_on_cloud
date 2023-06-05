@@ -1,0 +1,7 @@
+Flask==2.0.3
+Flask-Cors==3.0.8
+waitress==2.1.2
+opencv-contrib-python>=4.3.0.36
+deepface
+pymongo
+PyTurboJPEG==1.4.1

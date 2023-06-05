@@ -1,0 +1,109 @@
+<!-- <html>
+<body>
+    <form action = "/train" method="POST" enctype="multipart/form-data">
+        <label for="image">Select Image:</label>
+        <input type="file"  id="image" name="image" multiple /><br><br>
+        <label for="imtag">Face tag::</label>
+        <input type="text" id="imtag" name="face_tag"/><br><br>
+        <input type = "submit" value="Upload">
+    </form>
+
+    <form action = "/identify" method="POST" enctype="multipart/form-data">
+        <label for="image">Select Image:</label>
+        <input type="file"  id="image" name="image" multiple /><br><br>
+        <input type = "submit" value="Upload">
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tag Input Form</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			border: 1px solid black;
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+			max-width: 500px;
+			margin: 0 auto;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+		input[type="text"], input[type="file"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
+		button {
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 3px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+        .container {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.box {
+			flex: 1;
+			padding: 20px;
+			background-color: #f2f2f2;
+			border: 1px solid #ccc;
+		}
+
+		.heading {
+			margin-top: 0;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+<body>
+    <div class="container">
+		<div class="box">
+			<h2 class="heading">Train Face:</h2>
+            <form action = "/train" method="POST" enctype="multipart/form-data">
+                <label for="tag-name">Tag Name:</label>
+                <input type="text" id="tag-name" name="face_tag" placeholder="Enter tag name..." required>
+
+                <label for="tag-image">Image:</label>
+                <input type="file" id="tag-image" name="image" accept="image/*" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+		<div class="box">
+            <h2 class="heading">Identify Face:</h2>
+            <form action = "/identify" method="POST" enctype="multipart/form-data">
+                <label for="tag-image">Image:</label>
+                <input type="file" id="tag-image" name="image" accept="image/*" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+	</div>
+</body>
+</html>

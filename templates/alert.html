@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Danger Alert</title>
+	<style>
+		.alert {
+			padding: 15px;
+			border: 1px solid #d9534f;
+			border-radius: 4px;
+			background-color: #f2dede;
+			color: #d9534f;
+			margin-bottom: 20px;
+		}
+
+		.alert-heading {
+			margin-top: 0;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+		function showAlert(message) {
+			const alertDiv = document.createElement("div");
+			alertDiv.classList.add("alert");
+
+			const alertHeading = document.createElement("h4");
+			alertHeading.classList.add("alert-heading");
+			alertHeading.textContent = "No face found";
+
+			const alertText = document.createElement("p");
+			alertText.textContent = message;
+
+			alertDiv.appendChild(alertHeading);
+			alertDiv.appendChild(alertText);
+
+			document.body.appendChild(alertDiv);
+		}
+
+		// Get the input string from the URL query parameter "input"
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const inputString = urlParams.get('input');
+
+		// Call the showAlert function with the input string
+		showAlert(inputString);
+	</script>
+
+</body>
+</html>
